@@ -1,15 +1,17 @@
+// Styles
+import "../styles/progressBar.styles.css";
 const ProgressBar = () => {
-  return(
+  return (
     <div>
       <h2>Tu crédito en 3 sencillos pasos</h2>
-      <div>
-        <div>1</div>
-        <div>-</div>
-        <div>2</div>
-        <div>-</div>
-        <div>3</div>
+      <div className="progress__bar">
+        <div className="progress__bar__inprogress">1</div>
+        <div className="progress__bar__progress">-</div>
+        <div className="progress__bar__steps">2</div>
+        <div className="progress__bar__progress">-</div>
+        <div className="progress__bar__steps hidden">3</div>
       </div>
     </div>
-  )
+  );
 };
 export default ProgressBar;
