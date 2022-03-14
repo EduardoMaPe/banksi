@@ -1,0 +1,13 @@
+.nav-footer-flex {
+  display: flex;
+  margin-bottom: 1rem;  
+  gap: 30%;
+}
+.nav-footer__submenu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.nav-footer-flex a {
+  color: white;
+}

@@ -5,16 +5,18 @@ import Footer from "../components/footer";
 import ProgressBar from "../components/progressBar";
 
 // Styles
-import '../styles/step1.styles.css'
+import "../styles/step1.styles.css";
 
 const StepOne = () => {
-  return(
-    <section className="step1-w step1-px">
-      <NavBar />
-      <ProgressBar />
-      <StepOneForm />
+  return (
+    <section className="step1-w">
+      <div className="step1-px">
+        <NavBar />
+        <ProgressBar />
+        <StepOneForm />
+      </div>
       <Footer />
     </section>
-  )
+  );
 };
 export default StepOne;

@@ -12,14 +12,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 6rem;
+  padding: 0 10rem;
 }
 .nav__ul-flex a {
   color: black;
+  font-size: small;
 }
 .nav__btn-w {
   width: 10%;
   padding: 0.8rem 0;
   border: none;
   border-radius: 0.4rem;
+  cursor: pointer;
 }
