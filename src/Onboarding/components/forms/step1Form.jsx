@@ -1,7 +1,15 @@
+// React Router
+import { useNavigate } from 'react-router-dom';
+
 // Styles
 import '../../styles/step1Form.styles.css'
 
 const StepOneForm = () => {
+  let navigate = useNavigate()
+  const nextPage = (e) => {
+    e.preventDefault()
+    navigate('/two')
+  }
   return (
     <div className='step1-form'>
       <h3>Datos Personales</h3>
@@ -10,7 +18,7 @@ const StepOneForm = () => {
         datos del accionista mayoritario
       </p>
 
-      <form action="">
+      <form onSubmit={(e) => nextPage(e)} action="">
         <div className='step1__form__input-flex step1__form__input-border'>
           <label htmlFor="select">¿Qué tipo de persona eres?</label>
           <select name="select" id="select">

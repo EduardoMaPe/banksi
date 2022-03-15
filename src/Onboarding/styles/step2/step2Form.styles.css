@@ -1,0 +1,27 @@
+.step2__form__button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 0;
+  gap: 1rem;
+}
+.step2__form__button-container input {
+  color: white;
+  font-weight: bold;
+}
+.step2__form__button-container button {
+  color: black;
+  font-weight: bold;
+  background-color: white;
+  border: 1px solid black;
+}
+.step2__form__button-w {
+  width: 20%;
+  border: none;
+  padding: 0.7rem 0;
+  border-radius: 0.2rem;
+}
+.step2__form__button-w input {
+  color: white;
+}

@@ -37,7 +37,30 @@
   color: white;
   font-weight: bold;
 }
+.next-step-animated,
+.next-step-animated::after {
+  position: relative;
+  background-color: lightgrey;
+  width: 50%;
+  max-height: 0.6rem;
+  color: transparent;
+  overflow: hidden;
+}
+.next-step-animated::after {
+  content: '';
+  position: absolute;
+  background-color: blue;
+  height: 100%;
+  left: -100%;
+  width: 100%;
+  /* border-top-right-radius: 0.2rem;
+  border-bottom-right-radius: 0.2rem; */
+  animation: 1s nextstep forwards;
+}
 
-.hidden {
-  display: none;
+@keyframes nextstep {
+  to {
+    left: 0;
+  }
+  
 }
