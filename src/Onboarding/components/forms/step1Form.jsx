@@ -23,9 +23,10 @@ const StepOneForm = () => {
           <label htmlFor="select">¿Qué tipo de persona eres?</label>
           <select name="select" id="select">
             <option value="0">Selecciona una opción</option>
-            <option value="1">no</option>
-            <option value="2">quizas</option>
-            <option value="3">no lo se</option>
+            <option value="1">Persona física</option>
+            <option value="2">Persona moral</option>
+            <option value="3">Persona física con actividad empresarial</option>
+            <option value="4">No estoy dado de alta en el SAT</option>
           </select>
         </div>
 

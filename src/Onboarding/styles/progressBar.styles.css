@@ -37,6 +37,27 @@
   color: white;
   font-weight: bold;
 }
+.progress__bar__checked{
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: white;
+}
+.progress__bar__checked p svg {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: 50%;
+}
+.step-done {
+  background-color: #11BFAE;
+  width: 50%;
+  max-height: 0.6rem;
+  color: transparent;
+}
 .next-step-animated,
 .next-step-animated::after {
   position: relative;
@@ -45,16 +66,15 @@
   max-height: 0.6rem;
   color: transparent;
   overflow: hidden;
+  left: -0.1%;
 }
 .next-step-animated::after {
   content: '';
   position: absolute;
-  background-color: blue;
+  background-color: #11BFAE;
   height: 100%;
   left: -100%;
   width: 100%;
-  /* border-top-right-radius: 0.2rem;
-  border-bottom-right-radius: 0.2rem; */
   animation: 1s nextstep forwards;
 }
 

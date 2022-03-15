@@ -27,8 +27,11 @@ const StepTwoForm = () => {
           <label htmlFor="tiempo">¿Cuánto tiempo llevas operando con tu actividad?</label>
           <select name="tiempo" id="tiempo">
             <option value="0"> Selecciona una opción</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
+            <option value="1">0 a 6 meses</option>
+            <option value="2">6 meses a 1 año</option>
+            <option value="3">1 año a 3 año</option>
+            <option value="4">3 año a 5 año</option>
+            <option value="5">5 año o más</option>
           </select>
         </div>
         <div className="step1__form__input-flex step1__form__input-border">
@@ -43,7 +46,7 @@ const StepTwoForm = () => {
           <label htmlFor="clientes">¿El 50% de tus ingresos dependen del gobierno y/o de un solo cliente?</label>
           <select name="clientes" id="clientes">
             <option value="0"> Selecciona una opción</option>
-            <option value="1">Sí</option>
+            <option value="1">Si</option>
             <option value="2">No</option>
           </select>
         </div>
@@ -51,7 +54,7 @@ const StepTwoForm = () => {
           <label htmlFor="accionistas">¿Has cambiado de accionistas en algun momento?</label>
           <select name="accionistas" id="accionistas">
             <option value="0"> Selecciona una opción</option>
-            <option value="1">Sí</option>
+            <option value="1">Si</option>
             <option value="2">No</option>
           </select>
         </div>
@@ -59,12 +62,12 @@ const StepTwoForm = () => {
           <label htmlFor="acciones">¿Tienes el 50% o mas de las acciones?</label>
           <select name="acciones" id="acciones">
             <option value="0"> Selecciona una opción</option>
-            <option value="1">Sí</option>
+            <option value="1">Si</option>
             <option value="2">No</option>
           </select>
         </div>
         <div className="step2__form__button-container">
-          <button className="step2__form__button-w" onClick={() => navigate(-1)}>Regresar</button>
+          <button className="step2__form__button-w" onClick={() => navigate('/')}>Regresar</button>
           <input className="step2__form__button-w" type="submit" value="Siguiente paso" />
         </div>
       </form>
