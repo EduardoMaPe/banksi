@@ -1,17 +1,33 @@
+// Hooks
+import { useState } from "react";
 // React Router
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+
+// Helpers
+import { options_step1 } from "../../helpers/select-step1";
 
 // Styles
-import '../../styles/step1Form.styles.css'
+import "../../styles/step1Form.styles.css";
+import InputTypes from "../forms-components/input-types";
+import SelectInput from "../forms-components/select-input";
 
 const StepOneForm = () => {
-  let navigate = useNavigate()
+
+  const [_stepOneForm, setStepOneForm] = useState({})
+
+  let navigate = useNavigate();
   const nextPage = (e) => {
-    e.preventDefault()
-    navigate('/two')
+    e.preventDefault();
+    navigate("/two");
+  };
+
+  const handleChange = (e) => {
+    setStepOneForm({..._stepOneForm, [e.target.name]: e.target.value})
   }
+  const selectStyles = "step1__form__input-flex step1__form__input-border"
+  const inputsStyles = "step1__form__input-flex step1__form__input-w"
   return (
-    <div className='step1-form'>
+    <div className="step1-form">
       <h3>Datos Personales</h3>
       <p>
         *Si eres Persona Moral, por favor llenar los siguientes campos con los
@@ -19,62 +35,29 @@ const StepOneForm = () => {
       </p>
 
       <form onSubmit={(e) => nextPage(e)} action="">
-        <div className='step1__form__input-flex step1__form__input-border'>
-          <label htmlFor="select">¿Qué tipo de persona eres?</label>
-          <select name="select" id="select">
-            <option value="0">Selecciona una opción</option>
-            <option value="1">Persona física</option>
-            <option value="2">Persona moral</option>
-            <option value="3">Persona física con actividad empresarial</option>
-            <option value="4">No estoy dado de alta en el SAT</option>
-          </select>
+        <SelectInput options={options_step1} option0={'Selecciona una opción'} labelTitle={'¿Qué tipo de persona eres?'} styleSelectContainer={selectStyles} name={'Tipo de persona'} change={handleChange} ids={'tipoPersona'} />
+
+        <div className="step1__form__input step1__form__input-gap step1__form__input-border">
+          <InputTypes ids={"primer-nombre"} type={"text"} name={"primer-nombre"} placeHolder={"Ej: Carlos"} labelTitle={"Primer nombre"} styleContainer={inputsStyles} change={handleChange} />
+          <InputTypes ids={"segundo-nombre"} type={"text"} name={"segundo-nombre"} placeHolder={"Ej: Enrique"} labelTitle={"Segundo nombre"} styleContainer={inputsStyles} change={handleChange} />
         </div>
 
-        <div className='step1__form__input step1__form__input-gap step1__form__input-border'>
-          <div className='step1__form__input-flex step1__form__input-w'>
-            <label htmlFor="primer-nombre">Primer nombre</label>
-            <input id='primer-nombre' type="text" placeholder='Ej: Carlos' />
-          </div>
-          <div className='step1__form__input-flex step1__form__input-w'>
-            <label htmlFor="segundo-nombre">Segundo nombre</label>
-            <input id='segundo-nombre' type="text" placeholder='Ej: Enrique' />
-          </div>
+        <div className="step1__form__input step1__form__input-gap step1__form__input-border">
+          <InputTypes ids={"apellido-paterno"} type={"text"} name={"apellido-paterno"} placeHolder={"Ej: Rodríguez"} labelTitle={"Apellido paterno"} styleContainer={inputsStyles} change={handleChange} />
+          <InputTypes ids={"apellido-materno"} type={"text"} name={"apellido-materno"} placeHolder={"Ej: Hernández"} labelTitle={"Apellido materno"} styleContainer={inputsStyles} change={handleChange} />
         </div>
 
-        <div className='step1__form__input step1__form__input-gap step1__form__input-border'>
-          <div className='step1__form__input-flex step1__form__input-w'>
-            <label htmlFor="apellido-paterno">Apellido paterno</label>
-            <input id='apellido-paterno' type="text" placeholder='Ej: Rodríguez' />
-          </div>
-          <div className='step1__form__input-flex step1__form__input-w'>
-            <label htmlFor="apellido-materno">Apellido materno</label>
-            <input id='apellido-materno' type="text" placeholder='Ej: Hernández' />
-          </div>
+        <div className="step1__form__input step1__form__input-gap step1__form__input-border">
+          <InputTypes ids={"correo-electronico"} type={"email"} name={"correo-electronico"} placeHolder={"Ej: test01@test.com"} labelTitle={"Correo electrónico"} styleContainer={inputsStyles} change={handleChange} />
+          <InputTypes ids={"telefono"} type={"tel"} name={"telefono"} placeHolder={"Ej: 5552535455"} labelTitle={"Número celular"} styleContainer={inputsStyles} change={handleChange} />
         </div>
 
-        <div className='step1__form__input step1__form__input-gap step1__form__input-border'>
-          <div className='step1__form__input-flex step1__form__input-w'>
-            <label htmlFor="correo-electronico">Correo electrónico</label>
-            <input id='correo-electronico' type="email" placeholder='Ej: test01@test.com' />
-          </div>
-          <div className='step1__form__input-flex step1__form__input-w'>
-            <label htmlFor="celular">Número celular</label>
-            <input id='celular' type="tel" placeholder='Ej: 5552535455' />
-          </div>
+        <div className="step1__form__input step1__form__input-gap step1__form__input-border">
+          <InputTypes ids={"contrasenia"} type={"password"} name={"contrasenia"} placeHolder={"Ingresa tu contraseña"} labelTitle={"Contraseña"} styleContainer={inputsStyles} change={handleChange} />
+          <InputTypes ids={"confirm-contrasenia"} type={"password"} name={"confim-contrasenia"} placeHolder={"Ingresa de nuevo tu contraseña"} labelTitle={"Confirmación de contraseña"} styleContainer={inputsStyles} change={handleChange} />
         </div>
-
-        <div className='step1__form__input step1__form__input-gap step1__form__input-border'>
-          <div className='step1__form__input-flex step1__form__input-w'>
-            <label htmlFor="contrasena">Contraseña</label>
-            <input id='contrasena' type="password" placeholder='Ingresa tu contraseña' />
-          </div>
-          <div className='step1__form__input-flex step1__form__input-w'>
-            <label htmlFor="confirma">Confirmación de contraseña</label>
-            <input id='confirma' type="password" placeholder='Ingresa de nuevo tu contraseña' />
-          </div>
-        </div>
-        <div className='step1__form__button-container'>
-          <input type="submit" value='Continuar' />
+        <div className="step1__form__button-container">
+          <input type="submit" value="Continuar" />
         </div>
       </form>
     </div>

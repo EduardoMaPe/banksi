@@ -1,132 +1,71 @@
+// Hooks
+import { useState } from "react";
+
 // React Router
 import { useNavigate } from "react-router-dom";
 
+// Components
+import InputTypes from "../forms-components/input-types";
+
 // Helpers
-import { fechaGenerator } from "../../helpers/fechaGenerator";
+import { colonia, fechaGenerator, genero } from "../../helpers/select-step3";
+
+// Helpers
 
 // Styles
 import "../../styles/step3/step3Form.styles.css";
+import SelectInput from "../forms-components/select-input";
 
 const StepThreeForm = () => {
+  const [_stepThreeForm, setStepThree] = useState({})
   let navigate = useNavigate();
   const nextPage = (e) => {
     e.preventDefault();
     navigate("/four");
   };
+  const handleChange = (e) => {
+    setStepThree({..._stepThreeForm, [e.target.name]: e.target.value})
+  }
+  console.log(_stepThreeForm)
+  const inputsStyles = "step1__form__input-flex step1__form__input-w"
+  const inputsContainer = "step1__form__input step1__form__input-gap step1__form__input-border"
   return (
     <div className="step1-form">
       <h3>Tu dirección y RFC</h3>
       <form onSubmit={(e) => nextPage(e)}>
-        <div className="step1__form__input step1__form__input-gap step1__form__input-border">
-          <div className="step1__form__input-flex step1__form__input-w">
-            <label htmlFor="calle">Calle</label>
-            <input id="calle" type="text" placeholder="Ingresa la calle" />
-          </div>
-          <div className="step1__form__input-flex step1__form__input-w">
-            <label htmlFor="num-exterior">No. Exterior</label>
-            <input
-              id="num-exterior"
-              type="number"
-              placeholder="Ingresa el Número exterior"
-            />
-          </div>
+
+        <div className={inputsContainer}>
+          <InputTypes ids={"calle"} type={"text"} name={"calle"} placeHolder={"Ingresa la calle"} labelTitle={"Calle"} styleContainer={inputsStyles} change={handleChange} />
+          <InputTypes ids={"num-exterior"} type={"number"} name={"num-exterior"} placeHolder={"Ingresa el Número exterior"} labelTitle={"No. Exterior"} styleContainer={inputsStyles} change={handleChange} />
         </div>
 
-        <div className="step1__form__input step1__form__input-gap step1__form__input-border">
-          <div className="step1__form__input-flex step1__form__input-w">
-            <label htmlFor="num-interior">No. Interior</label>
-            <input
-              id="num-interior"
-              type="text"
-              placeholder="Ingresa el Número exterior"
-            />
-          </div>
-          <div className="step1__form__input-flex step1__form__input-w">
-            <label htmlFor="codigo-postal">Código Postal</label>
-            <input
-              id="codigo-postal"
-              type="number"
-              placeholder="Ingresa el Código Postal"
-            />
-          </div>
+        <div className={inputsContainer}>
+          <InputTypes ids={"num-interior"} type={"number"} name={"num-interior"} placeHolder={"Ingresa el Número interior"} labelTitle={"No. Interior"} styleContainer={inputsStyles} change={handleChange}  />
+          <InputTypes ids={"codigo-postal"} type={"number"} name={"codigo-postal"} placeHolder={"Ingresa el Código Postal"} labelTitle={"Código Postal"} styleContainer={inputsStyles} change={handleChange}  />
         </div>
 
-        <div className="step1__form__input step1__form__input-gap step1__form__input-border">
-          <div className="step1__form__input-flex step1__form__input-w">
-            <label htmlFor="colonia">Colonia</label>
-            <select name="colonia" id="colonia">
-              <option value="0">Selecciona una colonia</option>
-              <option value="">a</option>
-            </select>
-          </div>
-          <div className="step1__form__input-flex step1__form__input-w">
-            <label htmlFor="genero">Género</label>
-            <select name="genero" id="genero">
-              <option value="0">Selecciona un género</option>
-              <option value="1">Masculino</option>
-              <option value="2">Femenino</option>
-            </select>
-          </div>
+        <div className={inputsContainer}>
+          <SelectInput options={colonia} option0={'Selecciona una colonia'} labelTitle={'Colonia'} styleSelectContainer={inputsStyles} name={'colonia'} change={handleChange} ids={'colonia'} />
+          <SelectInput options={genero} option0={'Selecciona un género'} labelTitle={'Género'} styleSelectContainer={inputsStyles} name={'genero'} change={handleChange} ids={'genero'} />
         </div>
 
-        <div className="step1__form__input step1__form__input-gap step1__form__input-border">
-          <div className="step1__form__input-flex step1__form__input-w">
-            <label htmlFor="">Fecha de nacimiento</label>
+        <div className={inputsContainer}>
+          <div className={inputsStyles}>
+            <label>Fecha de nacimiento</label>
             <div className="container-fecha-nacimiento">
-              <div className="step1__form__input-flex step1__form__input-w">
-                <select name="anio" id="anio">
-                  <option value="0">Año</option>
-                  {fechaGenerator().anios.map((anio, idx) => (
-                      <option value={idx + 1}>{anio}</option>
-                    ))}
-                </select>
-              </div>
-              <div className="step1__form__input-flex step1__form__input-w">
-                <select name="mes" id="mes">
-                  <option value="0">Mes</option>
-                  {fechaGenerator().meses.map((mes, idx) => (
-                      <option value={idx + 1}>{mes}</option>
-                    ))}
-                </select>
-              </div>
-              <div className="step1__form__input-flex step1__form__input-w">
-                <select name="dia" id="dia">
-                  <option value="0">Día</option>
-                  {fechaGenerator().dias.map((dia, idx) => (
-                      <option value={idx + 1}>{dia}</option>
-                    ))}
-                </select>
-              </div>
+              <SelectInput options={fechaGenerator().anios} option0={'Año'} styleSelectContainer={inputsStyles} name={'anio'} change={handleChange} ids={'anio'} />
+              <SelectInput options={fechaGenerator().meses} option0={'Mes'} styleSelectContainer={inputsStyles} name={'mes'} change={handleChange} ids={'mes'} />
+              <SelectInput options={fechaGenerator().dias} option0={'Día'} styleSelectContainer={inputsStyles} name={'dia'} change={handleChange} ids={'dia'} />
             </div>
           </div>
 
-          <div className="step1__form__input-flex step1__form__input-w">
-            <label htmlFor="rfc">RFC del representante legal</label>
-            <input
-              id="rfc"
-              type="text"
-              placeholder="Ingresa RFC del representante legal"
-            />
-          </div>
+          <InputTypes ids={"rfc"} type={"text"} name={"rfc"} placeHolder={"Ingresa RFC de representante legal"} labelTitle={"RFC del representante legal"} styleContainer={inputsStyles} change={handleChange} />
         </div>
 
-        <div className="step1__form__input step1__form__input-gap step1__form__input-border">
-          <div className="step1__form__input-flex step1__form__input-w">
-            <label htmlFor="razon-social">Razón social de tu negocio</label>
-            <input
-              id="razon-social"
-              type="text"
-              placeholder="Ingresa la información solicitada"
-            />
-          </div>
-          <div className="step1__form__input-flex step1__form__input-w">
-            <label htmlFor="segundo-nombre">RFC de tu negocio</label>
-            <input
-              id="segundo-nombre"
-              type="text"
-              placeholder="Ingresa el RFC de tu negocio"
-            />
-          </div>
+        <div className={inputsContainer}>
+          <InputTypes ids={"razon-social"} type={"text"} name={"razon-social"} placeHolder={"Ingresa la información solicitada"} labelTitle={"Razón social del negocio"} styleContainer={inputsStyles} change={handleChange} />
+          <InputTypes ids={"rfc-negocio"} type={"text"} name={"rfc-negocio"} placeHolder={"Ingresa el RFC de tu negocio"} labelTitle={"RFC de tu negocio"} styleContainer={inputsStyles} change={handleChange} />
+          
         </div>
 
         <div className="step2__form__button-container">

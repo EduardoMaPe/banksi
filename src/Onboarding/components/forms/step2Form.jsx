@@ -1,15 +1,28 @@
+// Hooks
+import { useState } from "react";
+
+// React Router
 import { useNavigate } from "react-router-dom";
 
+// Helpers
+import { tiempoActividad, ventasMensuales, siNo } from "../../helpers/select-step2";
 // Styles
 import "../../styles/step2/step2Form.styles.css";
+import InputTypes from "../forms-components/input-types";
+import SelectInput from "../forms-components/select-input";
 
 const StepTwoForm = () => {
+  const [_stepTwoForm, setStepTwoForm] = useState({})
   let navigate = useNavigate();
 
   const nextPage = (e) => {
     e.preventDefault();
     navigate("/three");
   };
+  const handleChange = (e) => {
+    setStepTwoForm({..._stepTwoForm, [e.target.name]: e.target.value})
+  }
+  const inputsStyles = "step1__form__input-flex step1__form__input-border"
   return (
     <div className='step1-form'>
       <h3>Información sobre tu negocio</h3>
@@ -19,53 +32,12 @@ const StepTwoForm = () => {
         tu oferta.
       </p>
       <form onSubmit={(e) => nextPage(e)} action="">
-        <div className="step1__form__input-flex step1__form__input-border">
-          <label htmlFor="dedicas">En unas palabras cuéntanos ¿A qué te dedicas?</label>
-          <input id='dedicas' type="text" placeholder="Ej: Soy electricista" />
-        </div>
-        <div className="step1__form__input-flex step1__form__input-border">
-          <label htmlFor="tiempo">¿Cuánto tiempo llevas operando con tu actividad?</label>
-          <select name="tiempo" id="tiempo">
-            <option value="0"> Selecciona una opción</option>
-            <option value="1">0 a 6 meses</option>
-            <option value="2">6 meses a 1 año</option>
-            <option value="3">1 año a 3 año</option>
-            <option value="4">3 año a 5 año</option>
-            <option value="5">5 año o más</option>
-          </select>
-        </div>
-        <div className="step1__form__input-flex step1__form__input-border">
-          <label htmlFor="ventas">¿Cuáles son tus ventas mensuales promedio?</label>
-          <select name="ventas" id="ventas">
-            <option value="0"> Selecciona una opción</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-          </select>
-        </div>
-        <div className="step1__form__input-flex step1__form__input-border">
-          <label htmlFor="clientes">¿El 50% de tus ingresos dependen del gobierno y/o de un solo cliente?</label>
-          <select name="clientes" id="clientes">
-            <option value="0"> Selecciona una opción</option>
-            <option value="1">Si</option>
-            <option value="2">No</option>
-          </select>
-        </div>
-        <div className="step1__form__input-flex step1__form__input-border">
-          <label htmlFor="accionistas">¿Has cambiado de accionistas en algun momento?</label>
-          <select name="accionistas" id="accionistas">
-            <option value="0"> Selecciona una opción</option>
-            <option value="1">Si</option>
-            <option value="2">No</option>
-          </select>
-        </div>
-        <div className="step1__form__input-flex step1__form__input-border">
-          <label htmlFor="acciones">¿Tienes el 50% o mas de las acciones?</label>
-          <select name="acciones" id="acciones">
-            <option value="0"> Selecciona una opción</option>
-            <option value="1">Si</option>
-            <option value="2">No</option>
-          </select>
-        </div>
+        <InputTypes ids={"dedicas"} type={"text"} name={"dedicas"} placeHolder={"Ej: Soy electricista"} labelTitle={"En unas palabras cuéntanos ¿A qué te dedicas?"} styleContainer={inputsStyles} change={handleChange} />
+        <SelectInput options={tiempoActividad} option0={'Selecciona una opción'} labelTitle={'¿Cuánto tiempo llevas operando con tu actividad?'} styleSelectContainer={inputsStyles} name={'Tiempo de actividad'} change={handleChange} ids={'tiempo-actividad'} />
+        <SelectInput options={ventasMensuales} option0={'Selecciona una opción'} labelTitle={'¿Cuáles son tus ventas mensuales promedio?'} styleSelectContainer={inputsStyles} name={'Ventas promedio'} change={handleChange} ids={'ventas-promedio'} />
+        <SelectInput options={siNo} option0={'Selecciona una opción'} labelTitle={'¿El 50% de tus ingresos dependen del gobierno y/o de un solo cliente?'} styleSelectContainer={inputsStyles} name={'clientes'} change={handleChange} ids={'clientes'} />
+        <SelectInput options={siNo} option0={'Selecciona una opción'} labelTitle={'¿Has cambiado de accionistas en algun momento?'} styleSelectContainer={inputsStyles} name={'accionistas'} change={handleChange} ids={'accionistas'} />
+        <SelectInput options={siNo} option0={'Selecciona una opción'} labelTitle={'¿Tienes el 50% o mas de las acciones?'} styleSelectContainer={inputsStyles} name={'acciones'} change={handleChange} ids={'acciones'} />
         <div className="step2__form__button-container">
           <button className="step2__form__button-w" onClick={() => navigate('/')}>Regresar</button>
           <input className="step2__form__button-w" type="submit" value="Siguiente paso" />

@@ -1,3 +1,7 @@
+export const colonia = ["a", "n"];
+
+export const genero = ["Masculino", "Femenino"];
+
 export const fechaGenerator = () => {
   let dias = []
   for(let i = 1; i <= 31; i++) {
