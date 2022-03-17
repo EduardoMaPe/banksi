@@ -9,7 +9,7 @@ import "../styles/step1.styles.css";
 
 const StepOne = () => {
   return (
-    <section className="step1-w">
+    <section >
       <div className="step1-px">
         <NavBar />
         <ProgressBar />

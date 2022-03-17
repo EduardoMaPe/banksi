@@ -6,7 +6,7 @@ import ProgressBar from "../components/progressBar";
 
 const StepThree = () => {
   return(
-    <section className="step1-w">
+    <section className="">
       <div className="step1-px">
         <NavBar />
         <ProgressBar />
