@@ -1,10 +1,5 @@
 .step1-form h3 {
-  font-size: 1.8rem;
   padding-bottom: 1rem;
-  font-weight: 600;
-}
-.step1-form p {
-  font-size: 0.9rem;
 }
 .step1__form__input {
   display: flex;
@@ -20,8 +15,6 @@
 .step1__form__input-flex label {
   padding-top: 1.4rem;
   padding-bottom: 0.9rem;
-  font-weight: 500;
-  font-size: 0.9rem;
 }
 .step1__form__input-border input {
   border-radius: 0.2rem;
@@ -30,7 +23,7 @@
   padding: 0.4rem 0.4rem 0.4rem 0.2rem;
 }
 .step1__form__input-border input::placeholder {
-  color: black;
+  color: var(--primaryB);
 }
 .step1__form__input-border select {
   border-radius: 0.2rem;
@@ -51,7 +44,6 @@
 .step1__form__button-container input {
   width: 20%;
   color: white;
-  font-weight: bold;
   padding: 0.7rem 0;
   border: none;
   border-radius: 0.2rem;

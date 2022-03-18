@@ -10,8 +10,6 @@ import InputTypes from "../forms-components/input-types";
 // Helpers
 import { colonia, fechaGenerator, genero } from "../../helpers/select-step3";
 
-// Helpers
-
 // Styles
 import "../../styles/step3/step3Form.styles.css";
 import SelectInput from "../forms-components/select-input";
