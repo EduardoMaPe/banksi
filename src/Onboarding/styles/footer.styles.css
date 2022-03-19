@@ -1,30 +1,42 @@
 .footer-container {
-  background-color: lightgrey;
-  padding: 0 1rem;
+  background-color: var(--primaryB);
+  padding: 0 10rem;
+}
+.footer-container label {
+  color: var(--primaryG);
 }
 .footer-container p {
-  color: white;
-}
-.footer__logo {
-  margin-left: 8rem;
+  color: var(--bgW);
 }
 .footer-container-flex {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   padding-top: 3rem;
-  padding-bottom: 1rem;
+  padding-bottom: 5rem;
 }
 .svg-center {
   display: flex;
-  align-items: center;
+  align-items: baseline;
 }
-.footer-container-flex svg {
-  margin-right: 1rem;
-  width: 0.8rem;
+.svg-center svg {
+  margin-right: 0.8rem;
+  height: 1.5rem;
+  width: 1.5rem;
 }
-.footer-container-flex svg path {
-  fill: white;
+.svg-center svg path {
+  fill: var(--primaryG);
+}
+.footer__contacto {
+  padding-bottom: 2rem;
+  width: 100%;
 }
 .footer__contacto__dir {
-  padding: 0.4rem 0;
+  padding: 0.5rem 0;
+  width: 54%;
+}
+.nav-dir__container {
+  display: flex;
+  width: 100%;
+  margin-top: 2rem;
 }

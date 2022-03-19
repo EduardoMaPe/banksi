@@ -8,31 +8,11 @@
 .step1__form__input-gap {
   gap: 0 4rem;
 }
-.step1__form__input-flex {
-  display: flex;
-  flex-direction: column;
-}
-.step1__form__input-flex label {
-  padding-top: 1.4rem;
-  padding-bottom: 0.9rem;
-}
-.step1__form__input-border input {
-  border-radius: 0.2rem;
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.6);
-  padding: 0.4rem 0.4rem 0.4rem 0.2rem;
-}
-.step1__form__input-border input::placeholder {
-  color: var(--primaryB);
-}
 .step1__form__input-border select {
   border-radius: 0.2rem;
   border: 1px solid rgba(0, 0, 0, 0.3);
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.6);
   padding: 0.4rem 0.4rem 0.4rem 0
-}
-.step1__form__input-w {
-  width: 50%;
 }
 .step1__form__button-container {
   width: 100%;

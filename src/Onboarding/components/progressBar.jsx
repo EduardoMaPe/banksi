@@ -34,7 +34,7 @@ const ProgressBar = () => {
   }
   const validate = new Validator();
   return (
-    <div className="progress">
+    <section className="progress">
       <h2>Tu crédito en 3 sencillos pasos</h2>
       <div className="progress__bar">
         <div className={validate.statusStep1()}>
@@ -83,7 +83,7 @@ const ProgressBar = () => {
           <p>3</p>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 export default ProgressBar;

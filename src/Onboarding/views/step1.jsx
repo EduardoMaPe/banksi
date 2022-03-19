@@ -1,3 +1,6 @@
+// React Router
+import { useNavigate } from "react-router-dom";
+
 // Components
 import NavBar from "../components/nav/navBar";
 import StepOneForm from "../components/forms/step1Form";
@@ -8,10 +11,15 @@ import ProgressBar from "../components/progressBar";
 import "../styles/step1.styles.css";
 
 const StepOne = () => {
+  let navigate = useNavigate()
+
+  const btnAction = () => {
+    navigate('/')
+  }
   return (
     <section >
       <div className="step1-px">
-        <NavBar />
+        <NavBar btnAction={btnAction} btnTitle={'Iniciar sesión'} />
         <ProgressBar />
         <StepOneForm />
       </div>

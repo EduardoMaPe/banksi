@@ -1,23 +1,25 @@
 // Components
 import NavFooter from "./nav/navFooter";
 
+// Assets
+import Logo from "../assets/Logo-banksi.svg";
 // Styles
 import "../styles/footer.styles.css";
 
 const Footer = () => {
   return (
-    <div className="footer-container">
+    <footer className="footer-container">
       <div className="footer-container-flex">
-        <div className="footer__logo">BANKSI</div>
-        <div>
-          <NavFooter />
-
-          <div>
-            <h4>Contacto</h4>
-            <p className="footer__contacto__dir">
-              Av. Moliere #310 Int. 604, Polanco II, Sección Miguel Hidalgo,
-              C.P: 11550, Ciudad de México, CDMX
-            </p>
+        <img src={Logo} alt="Logo" className="logo-w" />
+        <div className="nav-dir__container">
+          <div >
+            <div className="footer__contacto">
+              <label>Contacto</label>
+              <p className="footer__contacto__dir">
+                Av. Moliere #310 Int. 604, Polanco II, Sección Miguel Hidalgo,
+                C.P: 11550, Ciudad de México, CDMX
+              </p>
+            </div>
             <p className="svg-center">
               <svg
                 width="18"
@@ -34,9 +36,10 @@ const Footer = () => {
               55 7100 0466
             </p>
           </div>
+          <NavFooter />
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 export default Footer;

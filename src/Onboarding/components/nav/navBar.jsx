@@ -1,27 +1,22 @@
 // React Router
-import { Link, useNavigate } from "react-router-dom";
-
+import { Link } from "react-router-dom";
+// Assets
+import Logo from '../../assets/Logo-banksi.svg'
 // Styles
 import "../../styles/navBar.styles.css";
-const NavBar = () => {
-  let navigate = useNavigate();
-
-  const login = () => {
-    navigate("");
-  };
+import LogInLogOutBtn from "../login-logout-btn";
+const NavBar = ({btnTitle, btnAction}) => {
 
   return (
     <nav className="nav-flex nav-py">
-      <h2>BANKSI</h2>
+      <img src={Logo} alt="Logo" className="logo-w" />
       <ul className="nav__ul-flex">
         <Link to={""}>¿Cómo funcionamos?</Link>
         <Link to={""}>Calcula tu crédito</Link>
         <Link to={""}>Sobre nosotros</Link>
         <Link to={""}>Preguntas frecuentes</Link>
       </ul>
-      <button className="nav__btn-w" onClick={() => login()}>
-        Iniciar sesión
-      </button>
+      <LogInLogOutBtn btnAction={btnAction} btnTitle={btnTitle} />
     </nav>
   );
 };

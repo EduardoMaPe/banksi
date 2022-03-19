@@ -1,12 +1,12 @@
 // React Router
 import { Link } from "react-router-dom";
 // Styles
-import '../../styles/navFooter.styles.css'
+import "../../styles/navFooter.styles.css";
 const NavFooter = () => {
   return (
     <div className="nav-footer-flex">
       <div className="nav-footer__submenu">
-        <h4>Navegación</h4>
+        <label>Navegación</label>
         <ul className="nav-footer__submenu">
           <Link to={""}>Inicio</Link>
           <Link to={""}>¿Cómo funcionamos?</Link>
@@ -14,9 +14,11 @@ const NavFooter = () => {
         </ul>
       </div>
       <div className="nav-footer__submenu">
-        <h4>Legal</h4>
-        <Link to={""}>Términos y condiciones</Link>
-        <Link to={""}>Aviso de privacidad</Link>
+        <label>Legal</label>
+        <ul className="nav-footer__submenu">
+          <Link to={""}>Términos y condiciones</Link>
+          <Link to={""}>Aviso de privacidad</Link>
+        </ul>
       </div>
     </div>
   );

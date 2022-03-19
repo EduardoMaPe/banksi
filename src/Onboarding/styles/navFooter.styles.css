@@ -1,13 +1,18 @@
 .nav-footer-flex {
   display: flex;
-  margin-bottom: 1rem;  
-  gap: 30%;
+  justify-content: space-between;
+  /* margin-bottom: 1rem;   */
+  width: 55%;
 }
 .nav-footer__submenu {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  height: 100%;
+  gap: 2rem;
 }
+/* .nav-footer__submenu ul {
+  padding-top: 1rem;
+} */
 .nav-footer-flex a {
-  color: white;
+  color: var(--bgW);
 }

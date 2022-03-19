@@ -1,0 +1,32 @@
+.bg-hero {
+  background-color: var(--bgW);
+  height: 100vh;
+  transform: skew(0, -5deg) translateY(-4rem);
+  box-sizing: border-box;
+  background: var(--gradient01)
+}
+.container {
+  min-width: 100%;
+  padding: 4rem 3rem 0 3rem;
+  transform: skew(0, 5deg);
+}
+.main-container {
+  width: 80%;
+  margin: 0 auto;
+  color: var(--bgW);
+  display: flex;
+  margin-top: 4.5rem;
+}
+.main-container span {
+  font-size: 1em;
+  background: var(--gradient02);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.tasa-prestamo {
+  padding: 3rem 0;
+}
+.tasa-prestamo h4 {
+  padding-bottom: 1rem;
+  color: var(--secondary);
+}

@@ -21,7 +21,8 @@
   --warning01: #FFFAA9;
   --error: #FA491B;
   --error01: #FFAB95;
-  --gradient01: lineargradient
+  --gradient01: linear-gradient(-235deg, #000000, #171717, #4F4F4E, #000000);
+  --gradient02: linear-gradient(170deg, #03F921, #16D2E6);
 }
 * {
   box-sizing: border-box;
@@ -29,34 +30,35 @@
   padding: 0;
 }
 body {
-  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif; */
-    font-family: Futura, Libre Franklin, sans-serif;
+  font-family: Inter, Libre Franklin, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+h1, h2, h3, h4 {
+  font-family: Inter;
+  font-weight: bold;
+  letter-spacing: 1%;
+}
 h1 {
   font-size: 3.5rem;
-  font-weight: bold;
 }
 h2 {
   font-size: 3.37rem;
-  font-weight: 700;
 }
 h3 {
   font-size: 2.5rem;
-  font-weight: 700;
 }
 h4 {
   font-size: 2rem;
-  font-weight: 700;
 }
 label {
+  font-family: Libre Franklin;
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: bold;
 }
-a {
+a, p {
+  font-family: Libre Franklin;
+  font-size: 1rem;
   text-decoration: none;
 }
 
