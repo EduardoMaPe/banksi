@@ -23,6 +23,8 @@
   --error01: #FFAB95;
   --gradient01: linear-gradient(-235deg, #000000, #171717, #4F4F4E, #000000);
   --gradient02: linear-gradient(170deg, #03F921, #16D2E6);
+  --skewMain: skew(0, -5deg) translateY(-4rem);
+  --skewFix: skew(0, 5deg)
 }
 * {
   box-sizing: border-box;

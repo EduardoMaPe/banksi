@@ -1,0 +1,28 @@
+.como-funcionamos {
+  width: 80%;
+  margin: 5rem auto;
+  height: 100vh;
+}
+.como-funcionamos h2 {
+  text-align: center;
+}
+.como-funcionamos__gif-tags {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem 0;
+}
+.como-funcionamos__gif-tags__tags {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: flex-start;
+  align-items: center;
+}
+.como-funcionamos__btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

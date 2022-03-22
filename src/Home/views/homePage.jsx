@@ -2,14 +2,15 @@
 
 // Components
 import Footer from "../../Onboarding/components/footer";
-import NavBar from "../../Onboarding/components/nav/navBar";
+import ComoFuncionamos from "../components/comoFuncionamos";
 import Hero from "../components/hero";
 
 const HomePage = () => {
  
   return (
-    <div style={{overflow: 'hidden'}}>
+    <div style={{overflow: 'hidden', backgroundColor: 'var(--bgW)'}}>
       <Hero />
+      <ComoFuncionamos />
       <Footer />
     </div>
   );

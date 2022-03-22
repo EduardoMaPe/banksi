@@ -1,14 +1,14 @@
 .bg-hero {
   background-color: var(--bgW);
   height: 100vh;
-  transform: skew(0, -5deg) translateY(-4rem);
+  transform: var(--skewMain);
   box-sizing: border-box;
   background: var(--gradient01)
 }
 .container {
   min-width: 100%;
   padding: 4rem 3rem 0 3rem;
-  transform: skew(0, 5deg);
+  transform: var(--skewFix);
 }
 .main-container {
   width: 80%;
