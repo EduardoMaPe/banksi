@@ -14,7 +14,7 @@ const Hero = () => {
   let navigate = useNavigate();
 
   const btnAction = () => {
-    navigate("/");
+    navigate("/one");
   };
   return (
     <main className="bg-hero">
