@@ -36,9 +36,10 @@ const Hero = () => {
               btnTitle={"Solicita tu crédito"}
             />
           </div>
-          <img src={Imag} alt="Prestamo" style={{ height: "100%" }} />
+          <img src={Imag} alt="Prestamo" style={{ minHeight: "100%" }} />
         </div>
       </div>
+      <div className="skew-container"></div>
     </main>
   );
 };
